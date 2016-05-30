@@ -49,13 +49,11 @@ def scheme_apply(procedure, args, env):
 
 def eval_all(expressions, env, tail=False):
     """Evaluate a Scheme list of EXPRESSIONS & return the value of the last."""
-    # BEGIN Question 7
     if expressions is not nil: 
         while expressions.second is not nil:
         	scheme_eval(expressions.first,env)
         	expressions = expressions.second
         return scheme_eval(expressions.first, env, tail)
-    # END Question 7
 
 ################
 # Environments #
@@ -78,12 +76,10 @@ class Frame:
 
     def lookup(self, symbol):
         """Return the value bound to SYMBOL.  Errors if SYMBOL is not found."""
-        # BEGIN Question 3
         if symbol in self.bindings:
         	return self.bindings[symbol]
         elif self.parent is not None:
         	return self.parent.lookup(symbol)
-        # END Question 3
         raise SchemeError("unknown identifier: {0}".format(symbol))
 
     def make_child_frame(self, formals, vals):
@@ -98,14 +94,12 @@ class Frame:
         <{a: 1, b: 2, c: 3} -> <Global Frame>>
         """
         child = Frame(self) # Create a new child with self as the parent
-        # BEGIN Question 10
         if len(formals) != len(vals):
         	raise SchemeError('Too many arguments to function call')
         while formals is not nil:
         	formal, val = formals.first, vals.first
         	child.define(formal, val)
         	formals, vals = formals.second, vals.second
-        # END Question 10
         return child
 
     def define(self, symbol, value):
@@ -151,14 +145,12 @@ class PrimitiveProcedure(Procedure):
         while args is not nil:
             python_args.append(args.first)
             args = args.second
-        # BEGIN Question 4
         if self.use_env:
         	python_args += [env]
         try:
         	return self.fn(*python_args)
         except TypeError:
         	raise SchemeError('Wrong numbers of arguments to function call')
-        # END Question 4
 
 class UserDefinedProcedure(Procedure):
     """A procedure defined by an expression."""
@@ -184,9 +176,7 @@ class LambdaProcedure(UserDefinedProcedure):
     def make_call_frame(self, args, env):
         """Make a frame that binds the my formal parameters to ARGS, a
         Scheme list of values, for a call evaluated in environment env."""
-        # BEGIN Question 12
         return self.env.make_child_frame(self.formals,args)
-        # END Question 12
 
     def __str__(self):
         return str(Pair("lambda", Pair(self.formals, self.body)))
@@ -221,19 +211,15 @@ def do_define_form(expressions, env):
     target = expressions.first
     if scheme_symbolp(target):
         check_form(expressions, 2, 2)
-        # BEGIN Question 5A
         rest = scheme_eval(expressions.second.first,env)
         env.define(target,rest)
         return target
-        # END Question 5A
     elif isinstance(target, Pair) and scheme_symbolp(target.first):
-        # BEGIN Question 9A
         symbol = target.first
         formals = target.second
         body = expressions.second
         env.define(symbol, LambdaProcedure(formals,body,env))
         return symbol
-        # END Question 9A
     else:
         bad = target.first if isinstance(target, Pair) else target
         raise SchemeError("Non-symbol: {}".format(bad))
@@ -241,9 +227,7 @@ def do_define_form(expressions, env):
 def do_quote_form(expressions, env):
     """Evaluate a quote form."""
     check_form(expressions, 1, 1)
-    # BEGIN Question 6B
     return expressions.first
-    # END Question 6B
 
 def do_begin_form(expressions, env):
     """Evaluate begin form."""
@@ -255,14 +239,11 @@ def do_lambda_form(expressions, env):
     check_form(expressions, 2)
     formals = expressions.first
     check_formals(formals)
-    # BEGIN Question 8
     return LambdaProcedure(formals,expressions.second,env)
-    # END Question 8
 
 def do_if_form(expressions, env):
     """Evaluate an if form."""
     check_form(expressions, 2, 3)
-    # BEGIN Question 13
     cond = expressions.first
     true_expr = expressions.second.first
     false_expr = expressions.second.second.first \
@@ -272,11 +253,9 @@ def do_if_form(expressions, env):
     	return scheme_eval(true_expr,env, True)
     else:
     	return scheme_eval(false_expr,env, True)
-    # END Question 13
 
 def do_and_form(expressions, env):
     """Evaluate a short-circuited and form."""
-    # BEGIN Question 14B
     if expressions is nil:
     	return True
     expr = expressions.first
@@ -287,11 +266,9 @@ def do_and_form(expressions, env):
     	expr = expressions.first
     	expressions = expressions.second
     return scheme_eval(expr,env, True)
-    # END Question 14B
 
 def do_or_form(expressions, env):
     """Evaluate a short-circuited or form."""
-    # BEGIN Question 14B
     if expressions is nil:
     	return False
     expr = expressions.first
@@ -302,7 +279,6 @@ def do_or_form(expressions, env):
     	expr = expressions.first
     	expressions = expressions.second
     return scheme_eval(expr,env, True)
-    # END Question 14B
 
 def do_cond_form(expressions, env):
     """Evaluate a cond form."""
@@ -315,7 +291,6 @@ def do_cond_form(expressions, env):
             if i < num_clauses-1:
                 raise SchemeError("else must be last")
             test = True
-        # BEGIN Question 15A
         else: 
         	val = scheme_eval(clause.first,env) # Michael: get the val of condition
         	test = scheme_true(val) # Michael: check #t or #f for the condition
@@ -325,7 +300,6 @@ def do_cond_form(expressions, env):
         		return eval_all(body,env,True)
         	else: 
         		return val
-        # END Question 15A
         expressions = expressions.second
         i += 1
 
@@ -342,7 +316,6 @@ def make_let_frame(bindings, env):
     a symbol and a Scheme expression."""
     if not scheme_listp(bindings):
         raise SchemeError("bad bindings list in let form")
-    # BEGIN Question 16
     formals = nil
     vals = nil
     while bindings is not nil:
@@ -357,7 +330,6 @@ def make_let_frame(bindings, env):
     	vals = Pair(expr, vals)
     	bindings = bindings.second
     return env.make_child_frame(formals,vals)
-    # END Question 16
 
 SPECIAL_FORMS = {
     "and": do_and_form,
@@ -393,7 +365,6 @@ def check_formals(formals):
 
     >>> check_formals(read_line("(a b c)"))
     """
-    # BEGIN Question 11B
     parameter_symbols = []
     if formals is nil:
     	return        
@@ -406,7 +377,6 @@ def check_formals(formals):
             raise SchemeError('duplicate parameteres in formals')
         formals = formals.second
         parameter_symbols += [expr]
-    # END Question 11B
 
 #################
 # Dynamic Scope #
@@ -431,12 +401,10 @@ class MuProcedure(UserDefinedProcedure):
         self.formals = formals
         self.body = body
 
-    # BEGIN Question 17
     def make_call_frame(self, args, env):
         """Make a frame that binds the my formal parameters to ARGS, a
         Scheme list of values, for a call evaluated in environment env."""
         return env.make_child_frame(self.formals, args)
-    # END Question 17
 
     def __str__(self):
         return str(Pair("mu", Pair(self.formals, self.body)))
@@ -450,9 +418,7 @@ def do_mu_form(expressions, env):
     check_form(expressions, 2)
     formals = expressions.first
     check_formals(formals)
-    # BEGIN Question 17
     return MuProcedure(formals, expressions.second)
-    # END Question 17
 
 SPECIAL_FORMS["mu"] = do_mu_form
 
@@ -488,9 +454,7 @@ def scheme_optimized_eval(expr, env, tail=False):
         return expr
 
     if tail:
-        # BEGIN Extra Credit
         return Evaluate(expr,env)
-        # END Extra Credit
     else:
         result = Evaluate(expr, env)
 

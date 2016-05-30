@@ -25,13 +25,12 @@
 ;; Problem 18
 ;; Returns a list of two-element lists
 (define (enumerate s)
-  ; BEGIN Question 18
         (define (enumerate2 s start_index)
                 (if (null? s) 
                     '()
                     (cons (list start_index (car s)) (enumerate2 (cdr s) (+ start_index 1)))))
         (enumerate2 s 0))
-  ; END Question 18
+
 
 ;; Problem 19
 ;; List all ways to make change for TOTAL with DENOMS
@@ -43,7 +42,7 @@
         (else (append (cons-all (car denoms) 
                                 (list-change (- total (car denoms)) denoms))
                       (list-change total (cdr denoms))))))
-  ; END Question 19
+
 
 ;; Problem 20
 ;; Returns a function that checks if an expression is the special form FORM
@@ -58,14 +57,10 @@
 ;; Converts all let special forms in EXPR into equivalent forms using lambda
 (define (analyze expr)
   (cond ((atom? expr)
-         ; BEGIN Question 20
           expr ; Michael: if atoms, return itself
-         ; END Question 20
          )
         ((quoted? expr)
-         ; BEGIN Question 20
          expr ; Michael: if quoted, do nothing
-         ; END Question 20
         )
         ((or (lambda? expr)
              (define? expr))
@@ -88,18 +83,8 @@
            
            (cons fn args)
           ))
-           ; END Question 20
         (else
-         ; BEGIN Question 20
          (map analyze expr) ; Michael: otherwise, analyze everything in the expr
-         ; END Question 20
          ))))
 
-;; Problem 21 (optional)
-;; Draw the hax image using turtle graphics.
-(define (hax d k)
-  ; BEGIN Question 21
-  'REPLACE-THIS-LINE
-  )
-  ; END Question 21
 

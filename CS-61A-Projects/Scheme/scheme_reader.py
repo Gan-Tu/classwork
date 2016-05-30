@@ -113,9 +113,7 @@ def scheme_read(src):
     elif val not in DELIMITERS:
         return val
     elif val == "'":
-        # BEGIN Question 1
         return Pair('quote', Pair(scheme_read(src), nil))
-        # END Question 1
     elif val == "(":
         return read_tail(src)
     else:
@@ -148,7 +146,6 @@ def read_tail(src):
             src.pop()
             return nil
         elif src.current() == ".":
-            # BEGIN Question 2
             src.pop() # pop the dot
             first = src.pop() # pop first element, left with the remaining
             second = src.current() # get the second element after the dot
@@ -164,7 +161,6 @@ def read_tail(src):
                 else:
                     src.pop()
                     return read_tail(src)
-            # END Question 2
         else:
             first = scheme_read(src)
             rest = read_tail(src)

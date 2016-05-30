@@ -18,9 +18,7 @@ def find_closest(location, centroids):
     >>> find_closest([3.0, 4.0], [[0.0, 0.0], [2.0, 3.0], [4.0, 3.0], [5.0, 5.0]])
     [2.0, 3.0]
     """
-    # BEGIN Question 3
     return min(centroids, key = lambda x: distance(location,x))
-    # END Question 3
 
 
 def group_by_first(pairs):
@@ -47,18 +45,14 @@ def group_by_centroid(restaurants, centroids):
     restaurants should appear once in the result, along with the other
     restaurants closest to the same centroid.
     """
-    # BEGIN Question 4
     return group_by_first([[find_closest(restaurant_location(restaurant),centroids),restaurant] for restaurant in restaurants ])
-    # END Question 4
 
 
 def find_centroid(cluster):
     """Return the centroid of the locations of the restaurants in cluster."""
-    # BEGIN Question 5
     x_cordinate = mean( [restaurant_location(restaurant)[0] for restaurant in cluster] )
     y_cordinate = mean( [restaurant_location(restaurant)[1] for restaurant in cluster] )
     return [x_cordinate, y_cordinate]
-    # END Question 5
 
 def k_means(restaurants, k, max_updates=100):
     """Use k-means to group restaurants by location into k clusters."""
@@ -69,10 +63,8 @@ def k_means(restaurants, k, max_updates=100):
 
     while old_centroids != centroids and n < max_updates:
         old_centroids = centroids
-        # BEGIN Question 6
         clusters = group_by_centroid(restaurants,centroids)
         centroids = [find_centroid(cluster) for cluster in clusters]
-        # END Question 6
         n += 1
     return centroids
 
@@ -93,16 +85,13 @@ def find_predictor(user, restaurants, feature_fn):
     xs = [feature_fn(r) for r in restaurants]
     ys = [reviews_by_user[restaurant_name(r)] for r in restaurants]
 
-    # BEGIN Question 7
-    "*** REPLACE THIS LINE ***"
     x_avg, y_avg = mean(xs), mean(ys)
     Sxx, Syy = sum([(x-x_avg)**2 for x in xs]), sum([(y-y_avg)**2 for y in ys])
     x_y_pairs = zip(xs,ys)
     Sxy = sum([(pair[0]-x_avg)*(pair[1]-y_avg) for pair in x_y_pairs])
 
-    b, r_squared = Sxy/Sxx, Sxy**2/(Sxx*Syy)  # REPLACE THIS LINE WITH YOUR SOLUTION
+    b, r_squared = Sxy/Sxx, Sxy**2/(Sxx*Syy) 
     a = y_avg - b*x_avg
-    # END Question 7
 
     def predictor(restaurant):
         return b * feature_fn(restaurant) + a
@@ -120,9 +109,7 @@ def best_predictor(user, restaurants, feature_fns):
     feature_fns -- A sequence of functions that each takes a restaurant
     """
     reviewed = user_reviewed_restaurants(user, restaurants)
-    # BEGIN Question 8
     return max([list(find_predictor(user, reviewed, fn)) for fn in feature_fns], key=lambda x:x[1])[0]
-    # END Question 8
 
 
 def rate_all(user, restaurants, feature_fns):
@@ -136,7 +123,6 @@ def rate_all(user, restaurants, feature_fns):
     """
     predictor = best_predictor(user, ALL_RESTAURANTS, feature_fns)
     reviewed = user_reviewed_restaurants(user, restaurants)
-    # BEGIN Question 9
     ratings = {}
     for restaurant in restaurants:
         if restaurant in reviewed:
@@ -144,7 +130,6 @@ def rate_all(user, restaurants, feature_fns):
         else:
             ratings[restaurant_name(restaurant)] = predictor(restaurant)
     return ratings
-    # END Question 9
 
 
 def search(query, restaurants):
@@ -154,12 +139,10 @@ def search(query, restaurants):
     query -- A string
     restaurants -- A sequence of restaurants
     """
-    # BEGIN Question 10
     target_restaurants = []
     for restaurant in restaurants:
         if query in restaurant_categories(restaurant): target_restaurants += [restaurant]
     return target_restaurants
-    # END Question 10
 
 
 def feature_set():

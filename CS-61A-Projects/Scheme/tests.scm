@@ -3,12 +3,6 @@
 ;;; In order to run only a prefix of these examples, add the line
 ;;;
 ;;; (exit)
-;;;
-;;; after the last test you wish to run.
-
-;;; **********************************
-;;; *** Add more of your own here! ***
-;;; **********************************
 
 (/ 10 (+ 2 3))
 ; expect 2
@@ -422,10 +416,6 @@
 ((composed multiply-by-two (composed add-one add-one)) 2)
 ; expect 8         
 
-;;; ***********************
-;;; *** END of My Tests ***
-;;; ***********************
-
 ;;; These are examples from several sections of "The Structure
 ;;; and Interpretation of Computer Programs" by Abelson and Sussman.
 
@@ -469,12 +459,6 @@
    (+ (- 10 7)
       6))
 ; expect 57
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Move the following (exit) line to run additional tests. ;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 ;;; 1.1.2
 
@@ -990,11 +974,6 @@ one-through-four
     (+ 1 (len (cdr s)))))
 (len '(1 2 3 4))
 ; expect 4
-
-
-;;;;;;;;;;;;;;;;;;;;
-;;; Extra credit ;;;
-;;;;;;;;;;;;;;;;;;;;
 
 ; Tail call optimization tests
 
