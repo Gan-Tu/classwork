@@ -201,7 +201,7 @@ class ThrowerAnt(Ant):
     implemented = True
     damage = 1
     food_cost = 4
-    min_range,max_range = 0,None #can only throw as close as the one in its place
+    min_range,max_range = 0,9999999 #can only throw as close as the one in its place
 
     def nearest_bee(self, hive):
         """Return the nearest Bee in a Place that is not the Hive, connected to
@@ -223,8 +223,7 @@ class ThrowerAnt(Ant):
         while in_range and len(place.bees) == 0: #keep looking if in range and no bees found
             place = place.entrance
             entrance_count += 1
-            if self.max_range: #If we have a max_range, check if we are still in the range
-                in_range = (entrance_count <= self.max_range)
+            in_range = (entrance_count <= self.max_range)
             if place is None: return None #If place is none, return none
 
         if place is hive or not in_range: return None #return None if in hive or out of range
@@ -281,11 +280,8 @@ class FireAnt(Ant):
         new_armor = self.armor - amount 
         self.armor -= amount
         if new_armor <= 0:
-            num_bees = len(self.place.bees)
-            index = num_bees - 1
-            while index>= 0:
-                self.place.bees[index].reduce_armor(self.damage)
-                index -= 1
+            for bee in list(self.place.bees):
+            	bee.reduce_armor(self.damage)
             self.place.remove_insect(self)
         # END Problem 4A
 
@@ -295,7 +291,7 @@ class LongThrower(ThrowerAnt):
 
     name = 'Long'
     # BEGIN Problem 4B
-    min_range = 5; max_range = None
+    min_range = 5;
     food_cost = 2
     implemented = True   # Change to True to view in the GUI
     # END Problem 4B
