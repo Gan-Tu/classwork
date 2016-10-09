@@ -149,17 +149,75 @@ The machine is not reset between lines, but continues stepping from where it lef
 Output the translation for each message line in groups of five upper-case letters, separated by blanks (the last group may have fewer characters, depending on the message length). 
 
 The following figure contains an example that shows an encryption followed by a decryption of the encrypted message. 
+
 ![figures.png](http://tugan0329.bitbucket.org/imgs/github/cs61b-enigma-3.png)
-Figure 3. Sample input and output (using the Naval cipher).
+
+Figure: Sample input and output (using the Naval cipher).
 
 
 ## Backgroud About the Enigma Machine ##
 
 ### Basic Mechanism ###
-...
+
+You may have heard of the Enigma machines that Germany used during World War II to encrypt its military communications. If you have not, I recommend you read the wikipedia page on them, or similar resource, especially the part about design and operation. 
+
+This project involves building a simulator for a generalized version of this machine (which itself had several different versions.) Your program will take descriptions of possible initial configurations of the machine and messages to encode or decode (the Enigma algorithms were reciprocal, meaning that encryption is its own inverse operation.)
+
+The Enigmas effect a substitution cipher, on the letters of a message. That is, at any given time, the machine performs a permutation---a one-to-one mapping---of the alphabet onto itself. The alphabet consists solely of the 26 letters in one case (there were various conventions for spaces and punctuation).
+
+Plain substitution ciphers are easy to break (you've probably seen puzzles in newspapers that consist of breaking such ciphers). The Enigma, however, implements a progressive substitution, different for each subsequent letter of the message. This made decryption considerably more difficult.
+
+The device consists of a simple mechanical system of (partially) interchangeable rotors (*Walzen*) that sit side-by-side on a shaft and make electrical contact with each other. Most of these rotors have 26 contacts on both sides, which are wired together internally so as to effect a permutation of signals coming in from one side onto the contacts on the other (and the inverse permutation when going in the reverse direction). 
+
+To the left of the rotors, one could select one of a set of reflectors (*Umkehrwalzen*), with contacts on their right sides only, and wired to connect half of those contacts to the other half. A signal starting from the right through one of the 26 possible contacts will flow through wires in the rotors, "bounce" off the reflector, and then come back through the same rotors (in reverse) by a different route, always ending up permuted to a letter position different from where it started. (*This was a significant cryptographic weakness, as it turned out. It doesn't really do a would-be code-breaker any good to know that some letters in an encrypted message might be the same as the those in the plaintext if he doesn't know which ones. But it does a great deal of good to be able to eliminate possible decryptions because some of their letters are the same as in the plaintext.*)
+
+Each rotor and each reflector implements a different permutation, and the overall effect depends on their configuration: which rotors and reflector are used, what order they are placed in the machine, and which rotational position they are initially set to. This configuration is the first part of the secret key used to encrypt or decrypt a message. 
+
+In what follows, we'll refer to the selected rotors in a machine's configuration as 1–N, with 1 being the reflector, and N the rightmost rotor. In our simulator, N will be a configuration parameter. In actual Enigma machines, it was fixed for any given model (the Navy used four and the Wehrmacht used three.)
+
+The overall permutation changes with each successive letter because some of the rotors rotate after encrypting a letter. Each rotor has a circular ratchet on its right side and a an "alphabet ring" (*Ringstellung*) on its left side that fits over the ratchet of the rotor to its left. Before a letter of a message is translated, a spring-loaded pawl (lever), one to the right of each rotating rotor, tries to engage the ratchet on the right side of its rotor and thus rotate that rotor by one position, changing the permutation performed by the rotor. The lever on the rightmost rotor (N) always succeeds, so that rotor N (the "fast" rotor) rotates one position before each character. The pawls pushing the other rotors, however, are normally blocked from engaging their rotors by the ring on the left side of the rotor to their right.
+
+This ring usually holds the pawl away from its ratchet, preventing the rotor wheel to its left from moving. However, the rings have notches in them (either one or two in the original Enigma machines), and when the pawl is positioned over a notch in the ring for the rotor to its right, it slips through to its own rotor and pushes it forward. A "feature" of the design called "double stepping" (corrected in other versions of the Enigma, since it reduced the period of the cipher) is that when a pawl is in a notch, it also moves the notch itself and the rotor the notch is connected to, so that the rotors on both sides of the pawl move.
+
+Let's illustrate with a much simplified version. Suppose our alphabet has only the letters A-C and we have four rotors (numbered 1-4) each of which has one notch on its ring at the C position. Suppose also that there are 3 pawls, one for each of rotors 2-4. There is no pawl for rotor 1, which will therefore not rotate. We'll start with the rotors set at AAAA. The next 19 positions are as follows:
+
+```
+AAAB  AAAC  AABA  AABB  AABC  AACA  ABAB  ABAC
+ABBA  ABBB  ABBC  ABCA  ACAB  ACAC  ACBA  ACBB
+ACBC  ACCA  AAAB
+```
+
+As you can see,
+
+- Rotor 4, the fast rotor, advances each time, pushed by pawl 3.
+- Rotor 3 advances whenever rotor 4 is at C, because then pawl 3 pushes on its ratchet.
+- Rotor 2 advances whenever rotor 3 is at C, pushed by pawl 2. Rotor 3 also advances when it is at C, because when pawl 2 slips into rotor 3's notch it will push against that notch when it moves.
+- There is no pawl 1, so rotor 2 (unlike rotor 3) does not advance just because it is at C.
+- Rotor 1 never changes, since there is no pawl on either side of it.
+
+So the advancement of the rotors, while similar to that of the wheels of an odometer, is not quite the same. If it were, then the next position after AACA would be AACB, rather than ABAB.
+
+The effect of advancing a wheel is to change where on the wheel any given signal enters or leaves. When a wheel is in its 'A' setting in the machine, then a signal that arrives from the right at, say, the 'C' position, goes into the 'C' contact on the wheel. Likewise, a signal that leaves the wheel from its left 'C' contact exits at the 'C' position. When the wheel is rotated by one to its 'B' setting, a signal that arrives at the 'C' position goes instead into the 'D' contact on the wheel, and a signal that leaves through the 'D' contact does so at the 'C' position. It's easier to calculate if we use numbers 0—25 rather than letters ('A' is 0, 'B' is 1, etc.). Then, when the wheel is in its k setting, a signal entering at the p position enters the p+kmod26 contact on the wheel, and a signal exiting through the c contact does so at the c−kmod26 position. For example, Figure 1 shows one of the rotors from the real Enigma machines (called rotor "I") and the effect of moving from its 'A' to its 'B' setting.
 
  ![figures.png](http://tugan0329.bitbucket.org/imgs/github/cs61b-enigma-1.png)
 
+The contacts on the rightmost rotor's right side connect with stationary input and output contacts, which run to keys that, when pressed, direct current to the contact from a battery or, when not pressed, direct current back from the contact to a light bulb indicating a letter of the alphabet. Since a letter never encrypts or decrypts to itself after going back and forth through the rotors, the to and from directions never conflict.
+
+The German Navy used a machine with 12 rotors and five slots for them:
+
+- Eight rotors labeled with roman numerals I—VIII, of which three will be used in any given configuration as the rightmost rotors,
+- Two additional non-moving rotors (Zusatzwalzen) labeled "Beta" and "Gamma", of which one will be used in any configuration, as the fourth-from-right rotor, and
+- Two reflectors (Umkehrwalzen), labeled 'B' and 'C', of which one will be used in any given configuration as the leftmost rotor.
+
+Given just this equipment, there are 614,175,744 possible configurations (or keys):
+- Two possible reflectors, times
+- Two possible rotors in the fourth position, times
+- 8!/(8−3)!=336 choices for the rightmost three rotors and their ordering, times
+- 26^4 possible initial rotational settings for the rightmost four rotors (each reflector had only one possible position.).
+
+Especially by today's standards, this is not a large key size (less than 30 bits). To make things more difficult for code-breakers, therefore, the Enigma incorporated a plugboard (*Steckerbrett*) between the keyboard and the rightmost wheel. It acted as a non-moving, configurable rotor. 
+
+The operator could choose any set of disjoint pairs of letters by means cables placed between them on the plugboard. Each selected pair would then be swapped going into the machine from the keyboard and coming out into the indicator lights. Thus, if the operator connected ("steckered") the letters A and P, then P would be substituted for each A typed and vice versa. Likewise, if an ingoing letter was encrypted to P by the other rotors, it would display as A, and letters decrypted as A would display as P.
 
 ### Describing Permutation ###
 
@@ -185,7 +243,8 @@ The inverse permutation just reverses these cycles:
 
 Each letter appears in one and only one cycle, so the mapping is unambiguous. As a shorthand, we'll say that if a letter is left out of all cycles, it maps to itself (so that we could have left off "(S)" In the example above.)
 
-Figure 2 shows the permutations corresponding to the rotors used in the German Navy's Enigma machine.
+Figure below shows the permutations corresponding to the rotors used in the German Navy's Enigma machine.
+
  ![figures.png](http://tugan0329.bitbucket.org/imgs/github/cs61b-enigma-2.png)
 
 ### Example ###
@@ -198,19 +257,19 @@ As an example of a translation, consider the set of rotors from Figure 2, and su
 
 We input the letter 'Y', which causes the following steps:
 
-	1. The pawls all move. This causes rotor 5 to advance from E to F. The other two pawls are not over notches, so rotors 3 and 4 do not move.
-	2. The letter 'Y' enters the plugboard and is converted to 'F'.
-	3. The letter 'F' enters the right side of rotor 5 (an I rotor). Since this rotor is at position 'F' (letter number 5 of the alphabet, numbering from 0), the signal enters the rotor at position 5+5=10, or 'K'.
-	4. According to Figure 2, rotor I converts 'K' to 'N' (letter number 13). Because of the rotation of rotor I, however, the signal actually comes out at letter position 13−5=8 ('I').
-	5. The 'I' signal from rotor 5 now goes into the right side of rotor 4. Since rotor 4 is a IV rotor and is in the 'L' (or 11) position, the 'I' enters the 8+11=19 ('T') position, and is translated to 'G' (6), which comes out at position 6−11=−5=21mod26, the fifth letter from the end of the alphabet ('V').
-	6. The 'V' from rotor 4 goes now to the right side of rotor 3, a III rotor in position 'X' (23). The signal enters the rotor at position 21+23=44=18mod26 ('S'), is translated to 'G' (6), which exits at position 6−23=−17=9mod26 ('J').
-	7. Rotor 2 (Beta) is in position 'A', and thus translates 'J' to 'W'.
-	8. Rotor 1 (B) converts the 'W' to 'H' and bounces it back to the left side of rotor 2.
-	9. Rotor 2 (Beta in the 'A' position) converts 'H' on its left to 'X' (23) on its right.
-	10. The 'X' from rotor 2 now goes into the 23+23=46=20mod26 ('U') position on the left side of rotor 3 (III in position 'X'), and is converted to 'W' (22), which comes out at position 22−23=−1=25mod26 ('Z') on the right side of rotor 3.
-	11. 'Z' now enters the left side of rotor 4 (IV in position 'L') at 25+11=36=10mod26 ('K'), and is translated to 'U' (20), which comes out at position 20−11=9 ('J') on the right side of rotor 4.
-	12. The 'J' from rotor 4 enters the left side of rotor 5 (I at position 'F') at position 9+5=14 ('O'), is translated to 'M' (12), and comes out at position 12−5=7 ('H') on the right side of rotor 5.
-	13. Finally,the letter 'H' is converted to 'Z' by the plugboard.
+1. The pawls all move. This causes rotor 5 to advance from E to F. The other two pawls are not over notches, so rotors 3 and 4 do not move.
+2. The letter 'Y' enters the plugboard and is converted to 'F'.
+3. The letter 'F' enters the right side of rotor 5 (an I rotor). Since this rotor is at position 'F' (letter number 5 of the alphabet, numbering from 0), the signal enters the rotor at position 5+5=10, or 'K'.
+4. According to Figure 2, rotor I converts 'K' to 'N' (letter number 13). Because of the rotation of rotor I, however, the signal actually comes out at letter position 13−5=8 ('I').
+5. The 'I' signal from rotor 5 now goes into the right side of rotor 4. Since rotor 4 is a IV rotor and is in the 'L' (or 11) position, the 'I' enters the 8+11=19 ('T') position, and is translated to 'G' (6), which comes out at position 6−11=−5=21mod26, the fifth letter from the end of the alphabet ('V').
+6. The 'V' from rotor 4 goes now to the right side of rotor 3, a III rotor in position 'X' (23). The signal enters the rotor at position 21+23=44=18mod26 ('S'), is translated to 'G' (6), which exits at position 6−23=−17=9mod26 ('J').
+7. Rotor 2 (Beta) is in position 'A', and thus translates 'J' to 'W'.
+8. Rotor 1 (B) converts the 'W' to 'H' and bounces it back to the left side of rotor 2.
+9. Rotor 2 (Beta in the 'A' position) converts 'H' on its left to 'X' (23) on its right.
+10. The 'X' from rotor 2 now goes into the 23+23=46=20mod26 ('U') position on the left side of rotor 3 (III in position 'X'), and is converted to 'W' (22), which comes out at position 22−23=−1=25mod26 ('Z') on the right side of rotor 3.
+11. 'Z' now enters the left side of rotor 4 (IV in position 'L') at 25+11=36=10mod26 ('K'), and is translated to 'U' (20), which comes out at position 20−11=9 ('J') on the right side of rotor 4.
+12. The 'J' from rotor 4 enters the left side of rotor 5 (I at position 'F') at position 9+5=14 ('O'), is translated to 'M' (12), and comes out at position 12−5=7 ('H') on the right side of rotor 5.
+13. Finally,the letter 'H' is converted to 'Z' by the plugboard.
 
 Therefore, 'Y' is converted to 'Z'.
 
