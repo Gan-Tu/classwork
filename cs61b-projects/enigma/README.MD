@@ -25,7 +25,7 @@ To use the Enigma Machine, please first generate your own **configuration file**
 
 There are three (3) ways to use the Enigma Machine:
 
-1. To generate encrypted/decrypted file using provided [configuration file] and [input file].
+- To generate encrypted/decrypted file using provided [configuration file] and [input file].
 
 Run the following line in your terminal:
 
@@ -42,7 +42,7 @@ java -jar enigma.jar default.conf testing/test.inp testing/test.out
 The above line uses "default.conf" as the configuration to encrypt/decrypt the "test.inp" file in the "testing" folder, and save the encrypted/decrypted file named "test.out" in the "testing" folder.
 
 
-2. To view encrypted/decrypted message directly in the terminal, using provided [configuration file] and [input file].
+- To view encrypted/decrypted message directly in the terminal, using provided [configuration file] and [input file].
 
 Run the following line in your terminal:
 
@@ -57,7 +57,7 @@ java -jar enigma.jar default.conf testing/test.inp
 The above line uses "default.conf" as the configuration to encrypt/decrypt the "test.inp" file in the "testing" folder, and then display the encrypted/decrypted message directly in the terminal.
 
 
-3. To encrypt/decrypt direct input with live feedback, using provided [configuration file].
+- To encrypt/decrypt direct input with live feedback, using provided [configuration file].
 
 Run the following line in your terminal:
 
@@ -88,13 +88,15 @@ The configuration file contains descriptions of the machine and the available ro
 
 Each file has the following contents:
 
-	* A string of non-blank characters, giving the alphabet. Unless you do the extra credit, you may assume this is the upper-case alphabet.
-	* Two integer numerals, S>P≥0, where S is the number of rotor slots (including the reflector) and P is the number of pawls — that is, the number of rotors that move. The moving rotors and their pawls are all to the right of any non-moving ones.
-	* Any number of rotor descriptors. Each has the following components (separated by whitespace):
-		* A name containing any non-blank characters other than parentheses.
-		* One of the characters R, N, or M, indicating that the rotor is a reflector, a non-moving rotor, or a moving rotor, respectively. Non-moving rotors can only be used in positions 2–S−P and moving rotors in positions S−P+1-P.
-		* Immediately after the M for a moving rotor come(s) the letter(s) at which there is a notch on the rotor's ring (no space between M and these letters).
-		* The cycles of the permutation, using the notation discussed above. For example, the German Naval Enigma machine might be described with this configuration file:
+- A string of non-blank characters, giving the alphabet. Unless you do the extra credit, you may assume this is the upper-case alphabet.
+
+- Two integer numerals, S>P≥0, where S is the number of rotor slots (including the reflector) and P is the number of pawls — that is, the number of rotors that move. The moving rotors and their pawls are all to the right of any non-moving ones.
+- Any number of rotor descriptors. Each has the following components (separated by whitespace):
+	1. A name containing any non-blank characters other than parentheses.
+	2. One of the characters R, N, or M, indicating that the rotor is a reflector, a non-moving rotor, or a moving rotor, respectively. Non-moving rotors can only be used in positions 2–S−P and moving rotors in positions S−P+1-P.
+	3. Immediately after the M for a moving rotor come(s) the letter(s) at which there is a notch on the rotor's ring (no space between M and these letters).
+	4.The cycles of the permutation, using the notation discussed above. For example, the German Naval Enigma machine might be described with this configuration file:
+	
 	```
 	ABCDEFGHIJKLMNOPQRSTUVWXYZ
 	5 3
