@@ -94,11 +94,7 @@ The configuration file contains descriptions of the machine and the available ro
 
 Each file has the following contents:
 
-<<<<<<< HEAD
 - A string of non-blank characters, giving the alphabet. The alphabet can be anything except whitespace, '(', ')', or '*'.
-=======
-- A string of non-blank characters, giving the alphabet. Unless you do the extra credit, you may assume this is the upper-case alphabet.
->>>>>>> e658a872008468af8913d7095bd5d9086e516d85
 
 - Two integer numerals, S>P≥0, where S is the number of rotor slots (including the reflector) and P is the number of pawls — that is, the number of rotors that move. The moving rotors and their pawls are all to the right of any non-moving ones.
 
