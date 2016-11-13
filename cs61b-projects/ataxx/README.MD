@@ -8,6 +8,8 @@ It includes customization functionality for presetting blocks and moves; it allo
 
 The code strictly follows the class cs61b code style guidelines with proper documentation at place.
 
+Due to class policy, the code for the programs are not disclossed.
+
 ## Academic Honesty ##
 If you are a student from UC Berkeley taking CS61B, please DO NOT try to reverse engineer my code. 
 
