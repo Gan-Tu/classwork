@@ -44,9 +44,9 @@ Ataxx is a two-person game played with red and blue pieces on a 7-by-7 board.
 
 As illustrated below, there are two possible kinds of move: you can extend from a piece of your own color by laying down a new piece of your color in an empty square next to that existing piece (horizontally, vertically, or diagonally), or you can jump: move a piece of your own color to an empty, non-adjacent square that is no more than two rows and no more than two columns distant. In either case, all opposing pieces that are next to the previously empty destination square are replaced by pieces of your color. Here is an example of a starting position (in the middle) and two possible moves with the same piece. Squares marked × show red's other possible jumps with that piece:
 
- ![figure1.png](http://tugan0329.bitbucket.org/imgs/github/cs61b-ataxx-1.png)
+![figure1.png](http://tugan0329.bitbucket.org/imgs/github/cs61b-ataxx-1.png)
  
- Figure 1. Extends and jumps.
+Figure 1. Extends and jumps.
 
 At the beginning of the game, we start with pieces in all four corners:
 
@@ -64,8 +64,8 @@ To make things even more interesting, you can place a set of blocks symmetricall
 
 For example, the configuration below may be described by listing three squares: "b2", "c3", and "c4"; reflecting these three gives in addition "f2", "e3", "e4", "b6", "c5", "f6", and "e5". Alternatively, the same configuration may be described as "f2", "c3", and "e4".
 
-![figure3.png](http://tugan0329.bitbucket.org/imgs/github/cs61b-ataxx-3.png)
- 
+![Figure 3](http://tugan0329.bitbucket.org/imgs/github/cs61b-ataxx-3.png)
+
 Figure 3. Blocks.
  
 ## Textual Input Game ##
