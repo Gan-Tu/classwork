@@ -1,4 +1,4 @@
-![Alt Text](http://inst.eecs.berkeley.edu/~cs61a/fa15/proj/hog/images/die5.gif)
+![Dice Picture](http://tugan0329.bitbucket.org/imgs/github/cs61a-hog.png)
 
 #Academic Honesty
 If you are a student from UC Berkeley taking CS61A, please DO NOT read my code before you write your own.
