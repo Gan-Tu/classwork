@@ -1,4 +1,4 @@
-![Alt Text](http://inst.eecs.berkeley.edu/~cs61a/fa15/proj/ants/assets/splash.png)
+![Game Picture](http://tugan0329.bitbucket.org/imgs/github/cs61a-ants.png)
 #Academic Honesty
 If you are a student from UC Berkeley taking CS61A, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
