@@ -4,7 +4,7 @@ This is a data structure project (implemented in Java) completed during Fall 201
 
 The code strictly follows the class cs61b code style guidelines with proper documentation at place.
 
-Due to class policy, the code for the programs are not disclossed.
+Due to class policy, the code for the programs are not disclossed. Source code is avaliable upon request.
 
 If you want to learn about the mechanics about the Enigma Machine, scroll down way below after the "How do I get set up?" section.
 
