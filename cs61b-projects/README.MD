@@ -1,6 +1,7 @@
 #Introduction
 These are the projects completed during Fall 2016 CS61B class: Data Structures, taught at Berkeley under Professor Paul Hilfinger.
-Due to class policy, the code for the programs are not disclossed. However, you can run the program using 
+Due to class policy, the code for the programs are not disclossed. Source code is avaliable upon request.
+However, you can run the program using 
 ```
 java -jar programName.jar
 ```
