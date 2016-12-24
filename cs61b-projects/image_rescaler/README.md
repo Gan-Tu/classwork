@@ -10,7 +10,7 @@ Due to class policy, the code for the programs are not disclossed. Source code i
 This image rescaler uses [seam carving](http://www.wikiwand.com/en/Seam_carving) technique to do content-aware rescaling of image. You can also learn more about it through this [video](https://www.youtube.com/watch?v=6NcIJXTlugc).
 
 ## How To Use It? ##
-To use it, use the following format:
+To use it, type the instruction according to the following format below in your terminal.
 ```
 java -jar image_rescaler.jar [image filename] [num rows to remove] [num columns to remove]
 ```
@@ -35,5 +35,5 @@ Rather than copying my work, please ask your GSIs, TAs, lab assistants, and inst
 
 ## How do I get set up? ##
 
-You only need java 1.7/1.8 or above.
+You only need java 1.8 or above.
 
