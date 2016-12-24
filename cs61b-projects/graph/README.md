@@ -6,8 +6,6 @@ The code strictly follows the class cs61b code style guidelines with proper docu
 
 Due to class policy, the code for the programs are not disclossed. Source code is avaliable upon request.
 
-If you want to learn about the mechanics about the Enigma Machine, scroll down way below after the "How do I get set up?" section.
-
 ## Graph Library Package Application Program Interface (API) ##
 I implemented a graph library package in this project, along with two client programs that are built upon on the graph library.
 
