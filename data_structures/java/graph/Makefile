@@ -23,3 +23,17 @@ sentinel: $(SRCS)
 clean:
 	$(RM) sentinel *.class *~ 
 
+astar: compile
+	java AStarDemo
+
+bfs: compile
+	java BreadthFirstDemo
+
+dfs: compile
+	java DepthFirstDemo
+
+trivial: compile
+	java TrivialMazeExplorerDemo
+
+cycle: compile
+	java CyclesDemo
