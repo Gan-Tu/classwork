@@ -21,7 +21,7 @@ Rather than copying my work, please ask your GSIs, TAs, lab assistants, and inst
 
 ## How do I get set up? ##
 
-You only need java 1.7/1.8 or above.
+You only need java 1.8 or above.
 
 ## How to Play the Game ##
 There are two (2) ways to play the Ataxx game.
