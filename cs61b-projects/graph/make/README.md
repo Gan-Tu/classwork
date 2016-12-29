@@ -9,12 +9,12 @@ This program is a simple version of the Make program (specifically, GNU make).
 
 To run the make client, a user type according to the following format in the terminal:
 ```
-java -ea make.Main [ -D FILEINFO ][ -f MAKEFILE ] TARGET ...
+java -jar make.jar [ -D FILEINFO ][ -f MAKEFILE ] TARGET ...
 ```
 
 For example, you can try it out using the example files provided.
 ```
-java -ea make.Main -D make.dir -f make.mk run
+java -jar make.jar -D make.dir -f make.mk run
 ```
 
 ### Makefile ###
