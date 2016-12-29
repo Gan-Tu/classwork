@@ -6,6 +6,9 @@ The code strictly follows the class cs61b style guidelines with proper documenta
 
 Due to class policy, the code for the programs are not disclossed. Source code is avaliable upon request.
 
+## Downloads ##
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cube.zip)
+
 ## The Puzzle ##
 In the Cube puzzle, you are presented with an initially blank cube sitting on one cell of a square grid. A face of the cube has the same size as a cell of the grid. Six of the grid's cells are painted blue; the rest are blank, along with all the faces of the cube. You may roll the cube one space vertically or horizontally. Each time you do so, the face of the cube that ends up on the bottom (touching the board) trades colors with the cell it now occupies.
 
