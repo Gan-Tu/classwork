@@ -52,11 +52,6 @@ public class WordTree{
         return node != null && node.findChild('*') != null;
     }
 
-    @FunctionalInterface
-    interface Fill<T, F> {
-        void fill(T s, F m);
-    }
-
     /** Return the number of words that start with prefix STR. */
     public int countPrefix(String prefix) {
         Node node = lastNode(prefix);
