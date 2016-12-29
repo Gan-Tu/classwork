@@ -11,6 +11,8 @@ I implemented a graph library package in this project, along with two client pro
 
 The API documentation can be accessed [here](https://tugan0329.bitbucket.io/docs/graph/).
 
+## Downloads ##
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/graph.zip)
 
 ## Academic Honesty ##
 If you are a student from UC Berkeley taking CS61B, please DO NOT try to reverse engineer my code. 
