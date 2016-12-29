@@ -3,6 +3,11 @@ These are general graph traversal algorithms implementation.
 
 The algorithm traverses from the bottom left corner to upper right corner.
 
+# Disclaimer
+I did not implement some of the utility tools in this files, and they are developed by other developers.
+
+I developed mainly the traversal algorithms and cycle detection.
+
 # Set Up
 To compile all java files, type in the terminal:
 ```
