@@ -6,6 +6,9 @@ The code strictly follows the class cs61b code style guidelines with proper docu
 
 Due to class policy, the code for the programs are not disclossed. Source code is avaliable upon request.
 
+## Downloads ##
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/image_rescaler.zip)
+
 ## About This Image Rescaler ##
 This image rescaler uses [seam carving](http://www.wikiwand.com/en/Seam_carving) technique to do content-aware rescaling of image. You can also learn more about it through this [video](https://www.youtube.com/watch?v=6NcIJXTlugc).
 
