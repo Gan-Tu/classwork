@@ -11,7 +11,7 @@ The code strictly follows the class cs61b code style guidelines with proper docu
 Due to class policy, the code for the programs are not disclossed. Source code is avaliable upon request.
 
 ## Downloads ##
-To download this project, click [here](http://tugan0329.bitbucket.io/downloads/ataxx.zip)
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61b/ataxx.zip)
 
 ## Academic Honesty ##
 If you are a student from UC Berkeley taking CS61B, please DO NOT try to reverse engineer my code. 

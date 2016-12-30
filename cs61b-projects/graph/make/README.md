@@ -5,7 +5,7 @@ This is a client program, make, using the graph package I implemented in the dir
 The API documentation can be accessed [here](https://tugan0329.bitbucket.io/docs/graph/).
 
 ## Downloads ##
-To download this project, click [here](http://tugan0329.bitbucket.io/downloads/make.zip)
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61b/make.zip)
 
 ## Make Client Program ##
 This program is a simple version of the Make program (specifically, GNU make).

@@ -9,7 +9,7 @@ Due to class policy, the code for the programs are not disclossed. Source code i
 If you want to learn about the mechanics about the Enigma Machine, scroll down way below after the "How do I get set up?" section.
 
 ## Downloads ##
-To download this project, click [here](http://tugan0329.bitbucket.io/downloads/enigma.zip)
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61b/enigma.zip)
 
 ## Academic Honesty ##
 If you are a student from UC Berkeley taking CS61B, please DO NOT try to reverse engineer my code. 

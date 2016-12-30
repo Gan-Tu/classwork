@@ -10,6 +10,9 @@ The policy statement goes on to explain the penalties for cheating, which range 
 Rather than copying my work, please ask your GSIs, TAs, lab assistants, and instructor for help. 
 If you invest the time to learn the material and complete the projects, you won't need to copy any answers.
 
+## Downloads ##
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61a/hog.zip)
+
 #Description of the Game
 In this project, I will develop a simulator and multiple strategies for the dice game Hog. 
 I will need to use control statements and higher-order functions together.

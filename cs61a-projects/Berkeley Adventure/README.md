@@ -8,6 +8,9 @@ The policy statement goes on to explain the penalties for cheating, which range 
 Rather than copying my work, please ask your GSIs, TAs, lab assistants, and instructor for help. 
 If you invest the time to learn the material and complete the projects, you won't need to copy any answers.
 
+## Downloads ##
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61a/adventure.zip)
+
 #Introduction
 This is an text adventure game. 
 

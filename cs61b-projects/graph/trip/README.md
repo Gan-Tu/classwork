@@ -5,7 +5,7 @@ This is a client program, trip, using the graph package I implemented in the dir
 The API documentation can be accessed [here](https://tugan0329.bitbucket.io/docs/graph/).
 
 ## Downloads ##
-To download this project, click [here](http://tugan0329.bitbucket.io/downloads/trip.zip)
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61b/trip.zip)
 
 ## Trip Client Program ##
 This program is a Trip program, that finds the shortest paths between any two locations, given a map.
