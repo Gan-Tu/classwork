@@ -44,7 +44,7 @@ where [output file] will be the destination and the name of generated output fil
 
 For example:
 ```
-java -jar enigma.jar default.conf testing/test.inp testing/test.out
+java -jar enigma.jar testing/default.conf testing/test.inp testing/test.out
 ```
 The above line uses "default.conf" as the configuration to encrypt/decrypt the "test.inp" file in the "testing" folder, and save the encrypted/decrypted file named "test.out" in the "testing" folder.
 
