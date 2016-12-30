@@ -9,7 +9,7 @@ I did not implement some of the utility tools in this files, and they are develo
 I developed mainly the traversal algorithms and cycle detection.
 
 # Downloads
-To download all java data structures in this directory, except graph and utils, click [here](http://tugan0329.bitbucket.io/downloads/data_structures/graph.zip)
+To download this graph demo, click [here](http://tugan0329.bitbucket.io/downloads/data_structures/graph.zip)
 
 
 # Set Up
