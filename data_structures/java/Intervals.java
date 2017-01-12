@@ -1,6 +1,9 @@
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
+import java.util.Collections;
+import java.util.Comparator;
 
 /** Interval.
  *  @author Gan Tu
@@ -10,73 +13,39 @@ public class Intervals {
      *  <x,y> with x <= y, representing intervals of ints, this returns the
      *  total length covered by the union of the intervals. */
     public static int coveredLength(List<int[]> intervals) {
-        ArrayList<int[]> sorted = sortIntervals(intervals);
-        ArrayList<int[]> filtered = new ArrayList<int[]>();
-        for (int[] interval : sorted) {
-            if (filtered.size() <= 0) {
-                filtered.add(interval);
+        ArrayList<int[]> sorted = new ArrayList<int[]>(intervals);
+        Collections.sort(sorted, new Comparator<int[]>() {
+            public int compare(int[] a1, int[] a2) {
+                if (a1.length == 0 && a2.length == 0) {
+                    return 0;
+                } else if (a1.length == 0 ){
+                    return -1;
+                } else if (a2.length == 0 ){
+                    return 1;
+                }
+                return a1[0] -  a2[0];
+            }
+        });
+        Stack<int[]> combined = new Stack<int[]>();
+        for (int[] arr: intervals) {
+            if (combined.isEmpty()) {
+                combined.add(arr);
                 continue;
             }
-            int[] last = filtered.get(filtered.size() - 1);
-            if (last[0] > interval[1] || last[1] < interval[0]) {
-                filtered.add(interval);
+            int[] last = combined.peek();
+            if (last[0] > arr[1] || last[1] < arr[0]) {
+                combined.add(arr);
             } else {
-                last[0] = Math.min(last[0], interval[0]);
-                last[1] = Math.max(last[1], interval[1]);
+                last[0] = Math.min(last[0], arr[0]);
+                last[1] = Math.max(last[1], arr[1]);
             }
         }
         int count = 0;
-        for (int[] interval : filtered) {
-            count += interval[1] - interval[0];
-        }
+        while (!combined.isEmpty()) {
+            int[] last = combined.pop();
+            count += last[1] - last[0];
+        } 
         return count;
-    }
-
-    /** Return a sorted list of INTERVALS based on its starting value. */
-    private static ArrayList<int[]> sortIntervals(List<int[]> intervals) {
-        ArrayList<int[]> sorted = new ArrayList<int[]>(intervals);
-        mergesort(sorted, 0, sorted.size() - 1);
-        return sorted;
-    }
-
-    /** Merge sort an ARRAY from I to K. */
-    private static void mergesort(ArrayList<int[]> array, int i, int k) {
-        int lower = i, upper = k;
-        int middle = (lower + upper) / 2;
-        if (lower < upper) {
-            mergesort(array, lower, middle);
-            mergesort(array, middle + 1, upper);
-            mergeParts(array, lower, middle, upper);
-        }
-    }
-
-    /** Merge sorted parts from LOWER to MIDDLE and
-     *  from MIDDLE to UPPER of ARRAY. */
-    private static void mergeParts(ArrayList<int[]> array, int lower,
-                                int middle, int upper) {
-
-        ArrayList<int[]> temp = new ArrayList<int[]>();
-        int i = lower, j = middle + 1;
-        while (i <= middle && j <= upper) {
-            if (array.get(i)[0] <= array.get(j)[0]) {
-                temp.add(array.get(i));
-                i++;
-            } else {
-                temp.add(array.get(j));
-                j++;
-            }
-        }
-        int remainder = i;
-        if (i > middle) {
-            remainder = j;
-        }
-        while (temp.size() < upper - lower + 1) {
-            temp.add(array.get(remainder));
-            remainder++;
-        }
-        for (i = 0; i < temp.size(); i++, lower++) {
-            array.set(lower, temp.get(i));
-        }
     }
 
 }
