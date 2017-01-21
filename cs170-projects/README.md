@@ -1,4 +1,4 @@
- #Introduction
+#Introduction
 These are the projects completed during Spring 2017 CS170 class: Efficient Algorithms and Intractable Problems, taught at Berkeley under Professor Sanjam Garg and Professor Prasad Raghavendra.
 
 #Academic Honesty
