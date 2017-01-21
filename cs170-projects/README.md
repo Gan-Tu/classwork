@@ -2,7 +2,7 @@
 These are the projects completed during Spring 2017 CS170 class: Efficient Algorithms and Intractable Problems, taught at Berkeley under Professor Sanjam Garg and Professor Prasad Raghavendra.
 
 #Academic Honesty
-If you are a student from UC Berkeley taking CS188, please DO NOT read my code before you write your own.
+If you are a student from UC Berkeley taking CS170, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
 
 The EECS Department Policy on Academic Dishonesty says, **"Copying all or part of another person's work, or using reference materials not specifically allowed, are forms of cheating and will not be tolerated."** 
