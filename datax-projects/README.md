@@ -12,4 +12,4 @@ Rather than copying my work, please ask your GSIs, TAs, lab assistants, and inst
 If you invest the time to learn the material and complete the projects, you won't need to copy any answers.
 
 #Software
-To view and test out the projects/games, you need python2 or above. You can get python [here](https://www.python.org/downloads/release/python-343/)
+To view and test out the projects, you need python2 or above. You can get python [here](https://www.python.org/downloads/release/python-343/)
