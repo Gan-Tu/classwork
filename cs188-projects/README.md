@@ -1,7 +1,7 @@
-#Introduction
+# Introduction
 These are the projects completed during Spring 2017 CS188 class: Artificial Intelligence, taught at UC Berkeley under Professor Anca Dragan.
 
-#Academic Honesty
+# Academic Honesty
 If you are a student from UC Berkeley taking CS188, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
 
@@ -11,5 +11,5 @@ The policy statement goes on to explain the penalties for cheating, which range 
 Rather than copying my work, please ask your GSIs, TAs, lab assistants, and instructor for help. 
 If you invest the time to learn the material and complete the projects, you won't need to copy any answers.
 
-#Software
+# Software
 To view and test out the projects/games, you need python 2.7. You can get python 2.7 [here](https://www.python.org/downloads/release/python-2713/)
