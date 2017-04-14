@@ -358,9 +358,10 @@ class ParticleFilter(InferenceModule):
         distribution = DiscreteDistribution()
         pacmanPosition = gameState.getPacmanPosition()
         jailPosition = self.getJailPosition()
+        beliefs = self.getBeliefDistribution()
         for ghostPos in self.particles:
             prob = self.getObservationProb(observation, pacmanPosition, ghostPos, jailPosition)
-            distribution[ghostPos] += prob
+            distribution[ghostPos] = prob * beliefs[ghostPos]
         if distribution.total() == 0:
             self.initializeUniformly(gameState)
         else:
