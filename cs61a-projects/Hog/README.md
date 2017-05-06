@@ -1,6 +1,6 @@
-![Dice Picture](http://tugan0329.bitbucket.org/imgs/github/cs61a-hog.png)
+![Dice Picture](http://tugan0329.bitbucket.io/imgs/github/cs61a-hog.png)
 
-#Academic Honesty
+# Academic Honesty
 If you are a student from UC Berkeley taking CS61A, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
 
@@ -13,7 +13,7 @@ If you invest the time to learn the material and complete the projects, you won'
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61a/hog.zip)
 
-#Description of the Game
+# Description of the Game
 In this project, I will develop a simulator and multiple strategies for the dice game Hog. 
 I will need to use control statements and higher-order functions together.
 

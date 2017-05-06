@@ -1,5 +1,5 @@
-![Yelp Map](http://tugan0329.bitbucket.org/imgs/github/cs61a-map.png)
-#Academic Honesty
+![Yelp Map](http://tugan0329.bitbucket.io/imgs/github/cs61a-map.png)
+# Academic Honesty
 If you are a student from UC Berkeley taking CS61A, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
 
@@ -12,7 +12,7 @@ If you invest the time to learn the material and complete the projects, you won'
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61a/maps.zip)
 
-#Description of the Project
+# Description of the Project
 
 In this project, I will create a visualization of restaurant ratings using **machine learning** and the *Yelp academic dataset*. 
 In this visualization, Berkeley is segmented into regions, where each region is shaded by the predicted rating of the closest restaurant 
@@ -30,7 +30,7 @@ The user that generated this map has a strong preference for Southside restauran
 6. users: A directory of user files
 7. visualize: A directory of tools for drawing the final visualization
 
-#Description of How to Use it 
+# Description of How to Use it 
 You should be able to generate a visualization of all restaurants rated by a user. 
 Use -u to select a user from the users directory. 
 You can even create your own.
@@ -51,7 +51,7 @@ In the visualization, you can now predict what rating a user would give a restau
       
 If you hover over each dot (a restaurant) in the visualization, you'll see a rating in parentheses next to the restaurant name.
 
-#Predicting your own ratings
+# Predicting your own ratings
 You can use the project to predict your own ratings too! Here's how:
 
 In the users directory, you'll see a couple of .dat files. Copy one of them and rename the new file to yourname.dat (for example, john.dat).

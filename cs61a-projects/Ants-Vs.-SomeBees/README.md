@@ -1,5 +1,5 @@
-![Game Picture](http://tugan0329.bitbucket.org/imgs/github/cs61a-ants.png)
-#Academic Honesty
+![Game Picture](http://tugan0329.bitbucket.io/imgs/github/cs61a-ants.png)
+# Academic Honesty
 If you are a student from UC Berkeley taking CS61A, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
 
@@ -12,7 +12,7 @@ If you invest the time to learn the material and complete the projects, you won'
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61a/ants.zip)
 
-#Description of the Project
+# Description of the Project
 In this project, I will create a tower defense game called **Ants Vs. SomeBees**. 
 As the ant queen, I populate my colony with the bravest ants my can muster.
 My ants must protect their queen from the evil bees that invade my territory.
@@ -33,7 +33,7 @@ This game is inspired by PopCap Games' Plants Vs. Zombies.
 [Click here to view the overall class hierarchy](https://d1b10bmlvqabco.cloudfront.net/attach/ij5ddqc0arp6r4/gry5hwu5rkg/ilreu56djlln/classes_ants_all.pdf)
 
 
-#Instruction to Play of the Game
+# Instruction to Play of the Game
 
 Play a game that includes water. To access the wet_layout that includes water, add the --water option (or -w for short) when you start the game.
 ```
@@ -63,7 +63,7 @@ We've also been developing a new browser GUI that we're looking to phase in. It'
 python3 gui.py [-h] [-d DIFFICULTY] [-w] [--food FOOD]
 ```
 
-#Control Help Menu
+# Control Help Menu
 ``` -h, --help     show this help message and exit```
 
 ``` -d DIFFICULTY  sets difficulty of game (easy/medium/hard/insane)```
@@ -72,11 +72,11 @@ python3 gui.py [-h] [-d DIFFICULTY] [-w] [--food FOOD]
 
 ```--food FOOD    number of food to start with when testing```
 
-#Character Description
+# Character Description
 Here are the detailed information about each character in this game, such as their functions.
-##Bees
+## Bees
   A Bee moves from place to place, following exits and stinging ants, causing damage to ants by 1 each time.
-##Ants
+## Ants
 1. **HarvesterAnt**
   1. food: 2; armor: 1; damage = 0; watersafe = False (will die if put in the water)
   2. HarvesterAnt produces 1 additional food per turn for the colony.
@@ -123,7 +123,7 @@ Here are the detailed information about each character in this game, such as the
   4. The game is over if a bee enters her place and reduces queen's armor to 0.
 
 
-#Acknowledgments
+# Acknowledgments
 Tom Magrino and Eric Tzeng developed this project with John DeNero. Jessica Wan contributed the orignal artwork. Joy Jeng and Mark Miyashita invented the queen ant. Many others have contributed to the project as well!
 
 Colin Schoen developed the new browser GUI. The beautiful new artwork was drawn by the efforts of Alana Tran, Andrew Huang, Emilee Chen, Jessie Salas, Jingyi Li, Katherine Xu, Meena Vempaty, Michelle Chang, and Ryan Davis.

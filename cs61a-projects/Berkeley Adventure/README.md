@@ -1,4 +1,4 @@
-#Academic Honesty
+# Academic Honesty
 If you are a student from UC Berkeley taking CS61A, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
 
@@ -11,7 +11,7 @@ If you invest the time to learn the material and complete the projects, you won'
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61a/adventure.zip)
 
-#Introduction
+# Introduction
 This is an text adventure game. 
 
 To start the game, type

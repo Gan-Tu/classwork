@@ -155,7 +155,7 @@ Output the translation for each message line in groups of five upper-case letter
 
 The following figure contains an example that shows an encryption followed by a decryption of the encrypted message. 
 
-![figures.png](http://tugan0329.bitbucket.org/imgs/github/cs61b-enigma-3.png)
+![figures.png](http://tugan0329.bitbucket.io/imgs/github/cs61b-enigma-3.png)
 
 Figure: Sample input and output (using the Naval cipher).
 
@@ -204,7 +204,7 @@ So the advancement of the rotors, while similar to that of the wheels of an odom
 
 The effect of advancing a wheel is to change where on the wheel any given signal enters or leaves. When a wheel is in its 'A' setting in the machine, then a signal that arrives from the right at, say, the 'C' position, goes into the 'C' contact on the wheel. Likewise, a signal that leaves the wheel from its left 'C' contact exits at the 'C' position. When the wheel is rotated by one to its 'B' setting, a signal that arrives at the 'C' position goes instead into the 'D' contact on the wheel, and a signal that leaves through the 'D' contact does so at the 'C' position. It's easier to calculate if we use numbers 0—25 rather than letters ('A' is 0, 'B' is 1, etc.). Then, when the wheel is in its k setting, a signal entering at the p position enters the p+kmod26 contact on the wheel, and a signal exiting through the c contact does so at the c−kmod26 position. For example, Figure 1 shows one of the rotors from the real Enigma machines (called rotor "I") and the effect of moving from its 'A' to its 'B' setting.
 
- ![figures.png](http://tugan0329.bitbucket.org/imgs/github/cs61b-enigma-1.png)
+ ![figures.png](http://tugan0329.bitbucket.io/imgs/github/cs61b-enigma-1.png)
 
 The contacts on the rightmost rotor's right side connect with stationary input and output contacts, which run to keys that, when pressed, direct current to the contact from a battery or, when not pressed, direct current back from the contact to a light bulb indicating a letter of the alphabet. Since a letter never encrypts or decrypts to itself after going back and forth through the rotors, the to and from directions never conflict.
 
@@ -250,7 +250,7 @@ Each letter appears in one and only one cycle, so the mapping is unambiguous. As
 
 Figure below shows the permutations corresponding to the rotors used in the German Navy's Enigma machine.
 
- ![figures.png](http://tugan0329.bitbucket.org/imgs/github/cs61b-enigma-2.png)
+ ![figures.png](http://tugan0329.bitbucket.io/imgs/github/cs61b-enigma-2.png)
 
 ### Example ###
 

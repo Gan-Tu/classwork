@@ -1,4 +1,4 @@
-#Academic Honesty
+# Academic Honesty
 If you are a student from UC Berkeley taking CS61A, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
 
@@ -11,7 +11,7 @@ If you invest the time to learn the material and complete the projects, you won'
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs61a/scheme.zip)
 
-#Introduction
+# Introduction
 In this project, I will develop an interpreter for a subset of the **Scheme** language. 
 
 Scheme is a simple but powerful functional language. 
@@ -19,7 +19,7 @@ To learn more about Scheme, you can read Structure and Interpretation of Compute
 
 I will also implement some small programs in Scheme. Files can be find in questions.scm
 
-#Files Contained in the Projects
+# Files Contained in the Projects
 You can download all of the project code as a zip archive, which contains the following files:
 
 1. scheme.py: the Scheme evaluator
@@ -31,7 +31,7 @@ You can download all of the project code as a zip archive, which contains the fo
 7. buffer.py: a buffer implementation
 8. ucb.py: utility functions for 61A
 
-#Development of the Scheme Interpreter 
+# Development of the Scheme Interpreter 
 I will develop the interpreter in several stages:
 
 1. Reading Scheme expressions
@@ -42,7 +42,7 @@ I will develop the interpreter in several stages:
 6. Calling user-defined procedures
 7. Evaluation of special forms
 
-#Details of Scheme
+# Details of Scheme
 **Read-Eval-Print** The interpreter reads Scheme expressions, evaluates them, and displays the results.
 ```
 scm> 2
@@ -74,7 +74,7 @@ scm> 'Hello
 hello
 ```
 
-#Running the Scheme Interpreter
+# Running the Scheme Interpreter
 To run my Scheme interpreter in an interactive session, type:
 ```
 python3 scheme.py

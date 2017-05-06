@@ -13,7 +13,7 @@ To download this project, click [here](http://tugan0329.bitbucket.io/downloads/c
 In the Cube puzzle, you are presented with an initially blank cube sitting on one cell of a square grid. A face of the cube has the same size as a cell of the grid. Six of the grid's cells are painted blue; the rest are blank, along with all the faces of the cube. You may roll the cube one space vertically or horizontally. Each time you do so, the face of the cube that ends up on the bottom (touching the board) trades colors with the cell it now occupies.
 
 For example, the board might start out as in the diagram on the left and after several moves end up as depicted in the diagram on the right. As you can see, the upper-left corner square does not change color, even though the cube passes over it, because the face of the cube that touches that square is already painted.
-![figures.png](http://tugan0329.bitbucket.org/imgs/github/cs61b-cube.png)
+![figures.png](http://tugan0329.bitbucket.io/imgs/github/cs61b-cube.png)
 
 ## Academic Honesty ##
 If you are a student from UC Berkeley taking CS61B, please DO NOT read my code before you write your own. Please submit your own code for grading.
