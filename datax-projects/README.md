@@ -1,6 +1,10 @@
 # Introduction
 These are the projects completed during Spring 2017 Data-X class, taught at Berkeley under Professor Ikhlaq Sidhu.
 
+
+## Downloads ##
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/datax/datax-projects.zip)
+
 # Academic Honesty
 If you are a student from UC Berkeley taking Data-X, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
