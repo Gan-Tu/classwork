@@ -13,4 +13,4 @@ Rather than copying my work, please ask your GSIs, TAs, lab assistants, and inst
 I will **not** be responsible for any consequence that resulted from any act of yours that may be deemed as cheating.
  
 # Software
-To view and test out the projects, you need java 1.8 or above and C.
+To view and test out the projects, you need Python 3, Gurobi Optimizer, and Google's ortools.

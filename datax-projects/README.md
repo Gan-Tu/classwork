@@ -13,4 +13,6 @@ Rather than copying my work, please ask your GSIs, TAs, lab assistants, and inst
 I will **not** be responsible for any consequence that resulted from any act of yours that may be deemed as cheating.
 
 # Software
-To view and test out the projects, you need python2 or above. You can get python [here](https://www.python.org/downloads/release/python-343/)
+To view and test out the projects, you need Python 2 and 3 or above. You can get python [here](https://www.python.org/downloads/release/python-343/). 
+
+You also need OpenCV, PyTube, Clarifai, Flask, Numpy, and ImageIo.
