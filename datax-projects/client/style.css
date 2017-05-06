@@ -1,0 +1,130 @@
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.navbar-collapse {
+  text-align:center;
+}
+.navbar-nav {
+    display:inline-block;
+    float:none;
+}
+.navbar-custom {
+    color: #FFFFFF;
+    background-color: #db0d0d;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) 
+.row.content {height: 500px}*/
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;}
+}
+
+.url-container {
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+#url-form {
+  margin: 0 auto;
+}
+
+
+.video-container {
+  margin-top: 10%;
+  padding-bottom: 3%;
+  margin: 0 auto;
+}
+
+#video-iframe {
+  width: 600px;
+  height: 400px;
+}
+
+.labels-container {
+  height: 360px;
+  overflow-y:scroll;
+  width: 85%;
+  margin: 0 auto;
+  border: solid 2px black;
+  display: inline-block;
+}
+
+#labels-list {
+  padding: 2%;
+  height: 80%;
+}
+
+#labels-list li {
+  margin-bottom: 1%;
+  padding-bottom: 2.1%;
+  list-style-type: none;
+}
+
+#btn-more {
+  margin-top: 1%;
+}
+
+
+.video-container {
+  padding-top: 20px;
+}
+
+/*.labels-container {
+  max-height: 400px;
+  overflow-y: scroll;
+}*/
+
+
+#labels-list li {
+  line-height: 1.5;
+  margin-bottom: 5px;
+  list-style-type: none;
+}
+
+#available-list-left div {
+  margin-top: 20px;
+  list-style-type: none;
+  text-align: center;
+  padding: 5px;
+}
+
+#available-list-right div {
+  margin-top: 20px;
+  list-style-type: none;
+  text-align: center;
+    padding: 5px;
+}
+
+/*#available-list div {
+    text-align: center;
+    padding: 5px;
+}*/
+
+.labelLink {
+  font-weight: bold;
+}
+
+.timeLink {
+}
+

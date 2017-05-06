@@ -1,0 +1,40 @@
+body {
+  margin-top: 20px;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.tt-video-container {
+  padding-top: 20px;
+}
+
+.tt-labels-container {
+  height: 400px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+#tt-labels-list li {
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+
+#tt-available-list {
+    margin-top: 20px;
+}
+
+#tt-available-list div {
+    text-align: center;
+    padding: 5px;
+}
+
+.labelLink {
+  font-weight: bold;
+}
+
+.timeLink {
+}

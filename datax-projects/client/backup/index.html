@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>TensorTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css" media="screen">
+  <link rel="stylesheet" href="tensortube.css" media="screen" title="no title" charset="utf-8">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <!-- Content -->
+  <div class="container">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            TensorTube
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav ">
+            <li><a href="https://github.com/alexklibisz/tensortube#how-does-it-work" target="_blank">How does it work?</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--/.container-fluid -->
+    </nav>
+
+    <div class="row">
+      <div class="col-md-12" style="margin-bottom: 20px; font-weight: bolder">
+        <h2>Use Tensorflow to label and jump to frames from any Youtube video.</h2>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-6">
+
+        <div class="tt-url-container">
+
+          <form id="tt-url-form">
+            <div class="input-group">
+              <input id="tt-url-form-input" type="text" class="form-control" placeholder="Enter Youtube URL">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Go!</button>
+              </span>
+            </div>
+          </form>
+
+        </div>
+
+        <div class="tt-video-container">
+          <iframe id="tt-video-iframe" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+        <h2 style="margin-top: 0px">Video Labels</h2>
+        <div class="tt-labels-container">
+          <ul id="tt-labels-list">
+            <!-- Labels will go here -->
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+        <div id="tt-available-list" >
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 30px">
+        <hr>
+        <p>Built by Douglas Aaser, Jeremy Anantharaj, Grant Bruer, Alex Klibisz at Volhacks 2016</p>
+        <p><a href="https://github.com/alexklibisz/tensortube" target="_blank">Source Code</a></p>
+    </footer>
+  </div>
+  <!-- /container -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68369236-2', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.2/lodash.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.14.0/axios.min.js"></script>
+  <script src="tensortube.js"></script>
+</body>
+
+</html>
