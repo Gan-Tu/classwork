@@ -1,5 +1,7 @@
 # Introduction
-These are the projects completed during Spring 2017 Data-X class, taught at Berkeley under Professor Ikhlaq Sidhu.
+This is the project that I completed during Spring 2017 Data-X class, taught at Berkeley under Professor Ikhlaq Sidhu.
+
+I developed a real time image classification and video labeling app.
 
 
 ## Downloads ##
