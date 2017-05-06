@@ -1,9 +1,9 @@
-#Introduction
+# Introduction
 These are the projects completed during Spring 2016 CS61A class: Structure and Interpretation of Computer Programs, taught at Berkeley under Professor Paul Hilfinger.
 
 I finished this course ranking the 17th out of 1045 students. I got above 100%  (300.2/300) for the total course grade.
 
-#Academic Honesty
+# Academic Honesty
 If you are a student from UC Berkeley taking CS61A, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
 
@@ -14,5 +14,5 @@ Rather than copying my work, please ask your GSIs, TAs, lab assistants, and inst
 
 I will **not** be responsible for any consequence that resulted from any act of yours that may be deemed as cheating.
 
-#Software
+# Software
 To view and test out the projects/games, you need python3 or above. You can get python [here](https://www.python.org/downloads/release/python-343/)
