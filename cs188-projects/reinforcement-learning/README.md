@@ -2,10 +2,10 @@
 I will update the spec for this project soon...
 
 ## Downloads ##
-__Coming Soon__
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs188/reinforcement-learning.zip)
 
 # Academic Honesty
-If you are a student from UC Berkeley taking CS61C, please DO NOT read my code before you write your own.
+If you are a student from UC Berkeley taking CS188, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
 
 The EECS Department Policy on Academic Dishonesty says, **"Copying all or part of another person's work, or using reference materials not specifically allowed, are forms of cheating and will not be tolerated."** 
@@ -16,4 +16,4 @@ Rather than copying my work, please ask your GSIs, TAs, lab assistants, and inst
 I will **not** be responsible for any consequence that resulted from any act of yours that may be deemed as cheating.
 
 # Software
-To view and test out the projects, you need C and Java.
+To view and test out the projects/games, you need python 2.7. You can get python 2.7 [here](https://www.python.org/downloads/release/python-2713/)
