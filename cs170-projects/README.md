@@ -1,6 +1,9 @@
 # Introduction
 These are the projects completed during Spring 2017 CS170 class: Efficient Algorithms and Intractable Problems, taught at Berkeley under Professor Sanjam Garg and Professor Prasad Raghavendra.
 
+## Downloads ##
+To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs170/cs170-projects.zip)
+
 # Academic Honesty
 If you are a student from UC Berkeley taking CS170, please DO NOT read my code before you write your own.
 Please submit your own code for grading.
