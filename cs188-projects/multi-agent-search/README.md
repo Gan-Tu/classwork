@@ -1,6 +1,9 @@
 # Introduction
 I will update the spec for this project soon...
 
+I will design agents for the classic version of Pacman, including ghosts. Along the way, I will implement both minimax and expectimax search and try my hand at evaluation function design.
+
+
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs188/multi-agent-search.zip)
 

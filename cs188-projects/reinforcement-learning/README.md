@@ -1,6 +1,9 @@
 # Introduction
 I will update the spec for this project soon...
 
+Reinforcement learning: I will implement value iteration and Q-learning. I will test my agents first on Grid world (from class), then apply them to a simulated robot controller (Crawler) and Pacman. Methods used include Value/policy iteration + Q learning + approximate Q learning
+
+
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs188/reinforcement-learning.zip)
 

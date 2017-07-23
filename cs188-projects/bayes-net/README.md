@@ -1,6 +1,9 @@
 # Introduction
 I will update the spec for this project soon...
 
+I will implement inference algorithms for Bayes Nets, specifically variable elimination and value-of-perfect-information computations. These inference algorithms will allow me to reason about the existence of invisible pellets and ghosts.
+
+
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs188/bayes-net.zip)
 

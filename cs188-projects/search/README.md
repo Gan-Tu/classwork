@@ -1,6 +1,9 @@
 # Introduction
 I will update the spec for this project soon...
 
+My agent will find paths through his maze world, both to reach a particular location and to collect food efficiently using DFS, BFS, UCS, A* search with a good heuristic.
+
+
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs188/search.zip)
 

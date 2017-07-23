@@ -1,6 +1,9 @@
 # Introduction
 I will update the spec for this project soon...
 
+In this project, I will design Pacman agents that use sensors to locate and eat invisible ghosts. I’ll advance from locating single, stationary ghosts to hunting packs of multiple moving ghosts with ruthless efficiency. Methods used include: Exact/approximate inference + Particle Filtering 
+
+
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs188/tracking.zip)
 
