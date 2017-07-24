@@ -1,6 +1,6 @@
 """
 Spring 2017 CS170 Final Project
-@author Gan Tu, Chris Hinrichs
+@author Gan Tu
 """
 
 from __future__ import division

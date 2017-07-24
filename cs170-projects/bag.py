@@ -1,6 +1,6 @@
 """
 Spring 2017 CS170 Final Project
-@author Gan Tu, Chris Hinrichs
+@author Gan Tu
 """
 
 P_UPPER_BOUND = 2**32
