@@ -1,10 +1,16 @@
 # README #
 
+## Overview
 This is a data structure project (implemented in Java) completed during Fall 2016 CS61B class: Data Structures, taught at Berkeley under Professor Paul Hilfinger. 
 
-This is a java implementation (with GUI) of strategic board game Ataxx. 
+In this project, I:
 
-It includes customization functionality for presetting blocks and moves; it allows loading of saved command files; and it includes three game modes: player-to-player, player-to-AI, and AI-to-AI. The AI stategy is implemented by me mainly using provsion table, and Alpha Beta Prunning with a depth of 5. The AI logic will be constantly updated.
+- Designed and engineered all data structures for a 2-person board game: Ataxx. Implemented both custom text-display and GUI support. Packaged all java code into a single executable file. 
+- Developed AI-support using Minimax and Alpha Beta Pruning for optional player-to-AI and AI-to-AI game modes.
+
+
+## More About The Project
+This java implementation of strategic board game Ataxx includes customization functionality for presetting blocks and moves; it allows loading of saved command files; and it includes three game modes: player-to-player, player-to-AI, and AI-to-AI. The AI stategy is implemented by me mainly using provsion table, and Alpha Beta Prunning with a depth of 5. The AI logic will be constantly updated.
 
 The code strictly follows the class cs61b code style guidelines with proper documentation at place.
 

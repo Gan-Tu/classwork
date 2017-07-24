@@ -1,6 +1,8 @@
 # Introduction
 I will update the spec for this project soon...
 
+In this project, I designed and implemented a working 16-bit two-cycle processor that uses a subset of MIPS instructions in Logisim.
+
 ## Downloads ##
 __Coming Soon__
 

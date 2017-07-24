@@ -5,7 +5,7 @@ In these projects, I
 
 - (a) built 5 core graph traversal algorithms for Pacman agents to find paths through random maze world, both to reach a particular location and to collect all food pellets efficiently; 
 - (b) developed Minimax/Expectimax search and engineered evaluation functions. Leveraged Markov Decision Process and Reinforcement Learning algorithms like Approximate Q-Learning to help Pacman learn and avoid ghosts; 
-- (c) implemented Bayes Nets inference, Exact and Approximate inference, and Particle Filtering algorithms to allow Pacman to locate and eat invisible pellets and multiple moving ghosts efficiently and accurately.
+- (c) implemented Bayes Nets inference, Exact and Approximate inference, and Particle Filtering algorithms to allow Pacman to locate and eat invisible pellets and multiple invisible moving ghosts efficiently and accurately.
 - (d) developed a classification algorithm to identify hand written digits
 
 

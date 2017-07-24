@@ -1,6 +1,10 @@
 # Introduction
 These are the projects completed during Spring 2017 CS170 class: Efficient Algorithms and Intractable Problems, taught at Berkeley under Professor Sanjam Garg and Professor Prasad Raghavendra.
 
+- Implemented and experimented with Hybrid Greedy algorithm, Linear Integer Programming, and Approximate Knapsack to solve 1000+ instances of NP-Hard challenges (hybrid of TSP & Knapsack) under 26 hours with timeout.
+- Engineered data structures and systems for overall project solution pipeline and unit testing workflow. Ranked 18 out of 346 teams in terms of the optimality of my solutions. (GitHub: code.tugan.me/np-hard-challenge)
+
+
 ## Downloads ##
 To download this project, click [here](http://tugan0329.bitbucket.io/downloads/cs170/cs170-projects.zip)
 

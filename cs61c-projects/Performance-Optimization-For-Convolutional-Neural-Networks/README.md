@@ -1,6 +1,8 @@
 # Introduction
 I will update the spec for this project soon...
 
+In this project, I optimized an image classification convolutional neural network built in C using Intel SSE Intrinsics, OpenMP, loop unrolling, and runtime data cache centric code design. Achieved a speed up of 10x faster runtime.
+
 To run this code, you need Cifar10 Batch files. I didn't include them in this repo, but I will provide them in a downloadable zip file, which is coming soon.
 
 ## Downloads ##
