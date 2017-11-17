@@ -5,7 +5,7 @@ In these projects, I
 
 - **B+ Tree**: Implemented a persistent [B+ trees](https://en.wikipedia.org/wiki/B%2B_tree).
 - **Iterators and Join Algorithms**: Implemented iterators and different join algorithms over tables in a database, including but not limited to _Single Nested Loop Join, Page Nested Loop Join, Block Nested Loop Join, and Sort Merge Join via External Sort_.
-- **Cost Estimation and Query Optimization**: Implemented a Selinger style query optimizer that finds the optimal left-deep execution plan for a SQL statement, using information about indcies and table/data statistics.
+- **Cost Estimation and Query Optimization**: Implemented a Selinger style query optimizer that finds the optimal left-deep execution plan for a SQL statement, using information about indices and table/data statistics.
 - **Lock Manager**: Implemented the logic for table-level locking (no intent locks) as well as the wait-die and wound-wait deadlock avoidance algorithms.
 
 
